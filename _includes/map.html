@@ -1,0 +1,38 @@
+{% assign date = page.date | date: "%Y-%m-%d" %}
+
+<div id="chart-container"></div>
+<script>
+FusionCharts.ready(function() {
+var salesMap = new FusionCharts({
+  type: 'maps/texas',
+  renderAt: 'chart-container',
+  width: '800',
+  height: '800',
+  dataFormat: 'json',
+  dataSource: {
+    "chart": {
+      "caption": "COVID-19 Risk Level on {{ page.date | date: "%a, %b %d, %Y" }}",
+      "showLabels": "0",
+      "formatNumberScale": "1"
+    },
+    "data": [
+    {% for county in site.data.covid %}
+
+    {% assign ma = county.[date]] | times: 1%}
+
+    {
+      "id": "{{ county.ID }}",
+      "value": "{{ ma }}",
+      "showLabel": "0",
+      "displayValue": "{{ ma }}",
+      "color": {% include color.html %}
+
+
+    },
+    {% endfor %}
+
+    ]
+  }
+}).render();
+});
+  </script>
