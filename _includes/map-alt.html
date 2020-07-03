@@ -1,0 +1,60 @@
+{% assign date = page.date | date: "%Y-%m-%d" %}
+
+<div id="chart-container2"></div>
+<script>
+FusionCharts.ready(function() {
+var salesMap2 = new FusionCharts({
+  type: 'maps/texas',
+  renderAt: 'chart-container2',
+  width: '600',
+  height: '600',
+  dataFormat: 'json',
+  dataSource: {
+    "chart": {
+      "caption": "COVID-19 Risk Level on {{ page.date | date: "%a, %b %d, %Y" }}",
+      "showLabels": "0",
+      "formatNumberScale": "1"
+    },
+    "colorrange": {
+        "minvalue": "0",
+        "startlabel": "Green",
+        "endlabel": "Red",
+        "code": "#33cc33",
+        "gradient": "1",
+        "color": [{
+            "maxvalue": "1",
+            "code": "#ffff66"
+        }, {
+            "maxvalue": "10",
+            "code": "#ff9900"
+        }, {
+            "maxvalue": "25",
+            "code": "#ff0000"
+        }, {
+            "maxvalue": "200",
+            "code": "#660000",
+            "displayValue": "Median"
+        }]
+    },
+    "data": [
+    {% for county in site.data.covid %}
+
+    {% assign ma = county.[date]] | times: 1%}
+
+    {
+      "id": "{{ county.ID }}",
+      "value": "{{ ma }}",
+      "showLabel": "0",
+      "displayValue": "{{ ma }}"
+
+
+    },
+    {% endfor %}
+
+    ]
+  }
+}).render();
+});
+  </script>
+
+  <p>If you are having trouble reading this in your email or an RSS reader, <a href="{{ site.url }}{{ page.url | relative_url }}">see the original post.</a></p>
