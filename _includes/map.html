@@ -11,7 +11,7 @@ var salesMap = new FusionCharts({
   dataFormat: 'json',
   dataSource: {
     "chart": {
-      "caption": "COVID-19 Risk Level on {{ page.date | date: "%a, %b %d, %Y" }}",
+      "caption": "COVID-19 Risk Level on {{ page.date | date: "%a, %b %d, %Y" }} (4 Colors)",
       "showLabels": "0",
       "entityFillHoverColor": "#666666",
       "formatNumberScale": "1"
@@ -37,5 +37,3 @@ var salesMap = new FusionCharts({
 }).render();
 });
   </script>
-
-  <p>If you are having trouble reading this in your email or an RSS reader, <a href="{{ site.url }}{{ page.url | relative_url }}">see the original post.</a></p>

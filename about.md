@@ -6,7 +6,7 @@ permalink: /about/
 
 {{ site.description }}
 
-The risk rating scale is based on the [COVID Risk Levels Dashboard from Harvard Global Health Institute](https://globalepidemics.org/key-metrics-for-covid-suppression/). Please see that site for more information on the rating scale.
+The risk rating scale is based on the [COVID Risk Levels Dashboard from Harvard Global Health Institute](https://globalepidemics.org/key-metrics-for-covid-suppression/), which was released on July 1, 2020. Please see that site for more information on the rating scale.
 
 I made this site for a few reasons:
 
@@ -14,6 +14,13 @@ I made this site for a few reasons:
 2. The Harvard site can move very slow if the site gets lots of traffic. I built this in such a way that the site should never slow down as a result of traffic spikes.
 3. Since I live in Texas, the Texas data is most important to me.
 4. The case data used on the Harvard site seems to be lagging 24 hours behind data from Texas Health and Human Services.
+5. While the 4-color rating is helpful and simple, the risk between a 7DMA of 24 and 25 is much closer than the risk between 10 and 24. So, I also wanted to create a map that has a gradual color scale that reflected the increasing risk level as the 7DMA changes. I provide both maps: First the map using the Harvard rating scale, and then a second map using a gradual color scale. The Harvard rating scale is:
+  - Green: 7-Day moving averages (7DMA) less than 1
+  - Yellow: 7DMA between 1-9
+  - Orange: 7DMA between 10-24
+  - Red: 7DMA greater than 25
+
+
 
 ### Methodology
 
@@ -23,4 +30,4 @@ The site is built using [Jekyll](https://jekyllrb.com/) and [FusionCharts](https
 
 ### About Me
 
-My name is Matt Cleaver, and I enjoy dabbling in random projects. I'm not a professional coder, web developer, or epidemiologist. I teach philosophy at Trinity Valley Community College. None of the information presented here is guaranteed to be accurate, so proceed accordingly. 
+My name is Matt Cleaver, and I enjoy dabbling in random projects. I'm not a professional coder, web developer, or epidemiologist. I teach philosophy at Trinity Valley Community College. None of the information presented here is guaranteed to be accurate, so proceed accordingly.
