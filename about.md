@@ -24,7 +24,7 @@ I made this site for a few reasons:
 
 ### Methodology
 
-I calculate daily case data using information from [Texas Health and Human Services](https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83) (click on the "Additional Data" tab and see "Cases over Time by County"). Then, I take the average of the most recent 7 days to get the moving average, and generate the number of cases per 100,000. There is some discrepancy between my 7-day moving average and the one provided by Harvard. My guess is that they are using different population estimates. I use the county population data provided in the Excel file from Texas Health and Human Services.
+I calculate daily case data using information from [Texas Health and Human Services](https://txdshs.maps.arcgis.com/apps/opsdashboard/index.html#/ed483ecd702b4298ab01e8b9cafc8b83) (click on the "Additional Data" tab and see "Cases over Time by County"). An updated spreadsheet is released daily by Texas HHS in late afternoon, usually around 4:00-5:00 p.m. (While a daily spreadsheet is released on weekends, I find that many county numbers do not change over the weekends). Then, I take the average of the most recent 7 days to get the moving average, and generate the number of cases per 100,000. There is some discrepancy between my 7-day moving average and the one provided by Harvard. My guess is that they are using different population estimates. I use the county population data provided in the Excel file from Texas Health and Human Services.
 
 The site is built using [Jekyll](https://jekyllrb.com/) and [FusionCharts](https://www.fusioncharts.com/).
 
